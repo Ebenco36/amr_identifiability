@@ -1,0 +1,49 @@
+== Part 1. Graph checks ==
+  M1_Primary model.txt                                 arrows  35 | Yk indep. of its R given upstream and Z: True  | upstream indep. of its R given Z: True
+  M1_Primary model_multiple_upstream.txt               arrows  56 | Yk indep. of its R given upstream and Z: True  | upstream indep. of its R given Z: True
+                                                       implied, testable: R_Yj2 indep. of Yj1 given S, W, T: True
+  M2_Unmeasured clinical-selection.txt                 arrows  37 | Yk indep. of its R given upstream and Z: False | upstream indep. of its R given Z: False
+  M2_Unmeasured clinical-selection_multiple_upstream.txt arrows  58 | Yk indep. of its R given upstream and Z: False | upstream indep. of its R given Z: False
+  M3_Downstream self-masking.txt                       arrows  36 | Yk indep. of its R given upstream and Z: False | upstream indep. of its R given Z: True
+  M3_Downstream self-masking_multiple_upstreams.txt    arrows  57 | Yk indep. of its R given upstream and Z: False | upstream indep. of its R given Z: True
+
+== Part 2. Data check in raw ARMD (E. coli) ==
+    site     years    released given result of  isolates released | S released | NS p (exact)
+Stanford 2010-2012    cefepime     ceftriaxone      1393     992/1018       363/375     3e-03
+Stanford 2010-2012 ceftriaxone        cefepime      1604    1136/1384       219/220     1e-51
+Stanford 2013-2015    cefepime     ceftriaxone      5180    4412/4427       730/753     1e-01
+Stanford 2013-2015 ceftriaxone        cefepime      5150    4891/4899       251/251     4e-01
+Stanford 2016-2018    cefepime     ceftriaxone     13488   3440/12048      425/1440     4e-01
+Stanford 2019-2021    cefepime     ceftriaxone     15129   3703/13423      421/1706     3e-06
+Stanford 2022-2024    cefepime     ceftriaxone     12467   3075/11008      402/1459     9e-02
+    UTSW 2010-2012    cefepime     ceftriaxone      2506     149/2392       112/114    2e-117
+    UTSW 2010-2012 ceftriaxone        cefepime      1213     172/1056        89/157     3e-09
+    UTSW 2013-2015    cefepime     ceftriaxone      5296     245/4831       461/465     0e+00
+    UTSW 2013-2015 ceftriaxone        cefepime       707      291/292       415/415     5e-01
+    UTSW 2016-2018    cefepime     ceftriaxone      7066    1497/6330       727/736     0e+00
+    UTSW 2016-2018 ceftriaxone        cefepime      2225    1573/1574       651/651     1e+00
+    UTSW 2019-2021    cefepime     ceftriaxone      7292    7160/7170       111/122     3e-15
+    UTSW 2019-2021 ceftriaxone        cefepime      7274    7243/7243         28/31     1e-07
+    UTSW 2022-2024    cefepime     ceftriaxone      8590    8364/8400       175/190     5e-14
+    UTSW 2022-2024 ceftriaxone        cefepime      8541    8521/8523         18/18     1e+00
+    ECUH 2013-2015    cefepime     ceftriaxone      5445     312/5152        19/293     1e+00
+    ECUH 2016-2018    cefepime     ceftriaxone     16997   1109/16034        72/963     1e-01
+    ECUH 2019-2021    cefepime     ceftriaxone     16215  10803/15159      806/1056     4e-01
+    ECUH 2022-2024    cefepime     ceftriaxone     17195  15487/15493     1701/1702     5e-01
+    ECUH 2022-2024 ceftriaxone        cefepime     17190  15742/15743     1446/1447     2e-01
+
+  rejected at p < 0.001: 9 of 22
+
+  Worked example to check by hand: UTSW 2013-2015, cefepime released, by ceftriaxone result
+released        cefepime absent  cefepime present   All
+result                                                 
+ceftriaxone NS                4               461   465
+ceftriaxone S              4586               245  4831
+All                        4590               706  5296
+
+  same, within urine outpatients only:
+released        cefepime absent  cefepime present   All
+result                                                 
+ceftriaxone NS                3               183   186
+ceftriaxone S              2350               115  2465
+All                        2353               298  2651

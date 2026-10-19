@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "amr-identifiability"
+version = "0.1.0"
+description = "Missingness graphs (m-DAGs) for recovering antimicrobial resistance prevalence from incomplete AST surveillance data"
+requires-python = ">=3.10"
+dependencies = ["networkx>=3.3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+amr-mdag = "amr_identifiability.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"amr_identifiability.viz" = ["assets/*.html", "assets/css/*.css", "assets/js/*.js", "assets/js/*/*.js", "assets/js/*/*/*.js"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

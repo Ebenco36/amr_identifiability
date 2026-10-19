@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="amr-identifiability">
+<meta name="description" content="Draw or import a DAG and explore it: d-separation, Mohan and Pearl's missing-data recoverability and testability, and causal effects (adjustment, front-door, ID), each with its derivation. Works offline.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f2f4f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1413" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="__TITLE__">
+<meta property="og:description" content="Missingness graphs and causal graphs, explored interactively: recoverability, testability and identification with every step shown.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28' fill='none' stroke-width='2' stroke-linecap='round'%3E%3Crect x='2' y='9' width='10' height='10' rx='3' fill='%23fbebcb' stroke='%23a86f00'/%3E%3Cpath d='M12 14h6M17 10.5l4 3.5-4 3.5' stroke='%231b2322'/%3E%3Ccircle cx='22.5' cy='14' r='3.5' stroke='%231b2322' stroke-dasharray='2 1.6'/%3E%3C/svg%3E">
+<title>__TITLE__</title>
+<style>
+/*__CSS__*/
+</style>
+</head>
+<body>
+<noscript><p style="padding:16px;font:14px system-ui">This explorer needs JavaScript. Everything runs in your browser; nothing is sent anywhere.</p></noscript>
+<div class="app" id="app">
+  <header class="topbar">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 28 28" aria-hidden="true"><rect x="2" y="9" width="10" height="10" rx="3"/><path d="M12 14h6"/><path d="M17 10.5l4 3.5-4 3.5"/><ellipse cx="22.5" cy="14" rx="3.5" ry="3.5" stroke-dasharray="2 1.6"/></svg>
+      <div class="brand-text"><h1 id="app-title">__TITLE__</h1><span class="brand-sub" id="model-sub"></span></div>
+    </div>
+    <div class="model-switch" id="model-switch" role="group" aria-label="Model"></div>
+    <div class="command">
+      <svg class="command-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5L14 14"/></svg>
+      <input id="command-input" type="text" spellcheck="false" autocomplete="off" placeholder="Node name, or  Yk _||_ R_Yk | S, W, T" aria-label="Find a node or check an independence">
+      <kbd class="command-kbd">/</kbd>
+      <ul class="command-suggest" id="command-suggest" role="listbox" hidden></ul>
+    </div>
+    <div class="actions" id="actions"></div>
+  </header>
+  <main class="workspace" id="workspace">
+    <aside class="build" id="build" aria-label="Build the graph"></aside>
+    <section class="canvas" id="canvas" aria-label="Graph">
+      <div class="canvas-banner" id="canvas-banner" hidden></div>
+      <div class="canvas-controls" id="canvas-controls"></div>
+      <div class="legend" id="legend"></div>
+      <div class="canvas-status" id="canvas-status"></div>
+      <div class="tooltip" id="tooltip" hidden></div>
+    </section>
+    <div class="splitter" id="splitter" role="separator" aria-orientation="vertical" aria-label="Resize panel" tabindex="0"></div>
+    <aside class="panel" id="panel">
+      <nav class="tabs" id="tabs" role="tablist"></nav>
+      <div class="panel-body" id="panel-body"></div>
+    </aside>
+  </main>
+</div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<dialog class="dialog" id="export-dialog"></dialog>
+<dialog class="dialog" id="help-dialog"></dialog>
+<dialog class="dialog" id="import-dialog"></dialog>
+<script type="application/json" id="mg-data">__DATA__</script>
+<script type="application/json" id="mg-state">__STATE__</script>
+<script id="mg-core">
+/*__CORE__*/
+</script>
+<script>
+/*__JS__*/
+</script>
+</body>
+</html>

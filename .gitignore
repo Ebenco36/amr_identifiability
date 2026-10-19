@@ -1,0 +1,23 @@
+# ---- never publish: patient-level and derived ARMD data, the paper PDF, slides, notebooks with outputs
+data/
+data_merge/__pycache__/
+test.csv
+*.csv
+*.key
+*.pptx
+m_DAG/*.pdf
+*.ipynb
+
+# ---- build output and environments
+_site/
+m_DAG/m_graph_explorer.html
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.coverage
+.DS_Store
+.claude/
+history.txt

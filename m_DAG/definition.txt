@@ -1,0 +1,42 @@
+Node definitions and conventions
+The identifiers mean:
+
+A: recorded prior antibiotic-exposure profile.
+
+B, B_star, R_B: gender, recorded gender, and gender missingness.
+
+G, G_star, R_G: age group, recorded age group, and age missingness.
+
+C: baseline comorbidity.
+
+D: ADI profile.
+
+H: recorded baseline organism history.
+
+N: recorded baseline nursing-facility visit history.
+
+S: recorded specimen category.
+
+W: ward context.
+
+T: calendar period.
+
+U_B: unobserved shared resistance factors.
+
+U_W: unrecorded AST panel assignment.
+
+U_L: reporting configuration.
+
+Yj1–Yj4: resistance to the four upstream antibiotics.
+
+Yk: resistance to the downstream antibiotic.
+
+R_Y...: corresponding result missingness.
+
+Y..._star: corresponding recorded resistance result.
+
+U_C: unmeasured clinical selection factors, included only in M2.
+
+Throughout, 
+R=0 means observed and 
+R=1 means missing.

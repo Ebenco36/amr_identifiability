@@ -1,0 +1,114 @@
+dag {
+A [pos="-1.458,-4.206"]
+B [pos="-4.146,-0.830"]
+B_star [pos="-4.340,1.971"]
+C [pos="-1.466,-8.858"]
+D [pos="-3.417,-8.977"]
+G [pos="-3.663,-6.720"]
+G_star [pos="-4.384,-4.721"]
+H [pos="-2.503,0.566"]
+N [pos="-0.816,-7.077"]
+
+R_B [pos="-4.489,-3.038"]
+R_G [pos="-4.586,-7.809"]
+R_Yj1 [pos="-0.675,-0.221"]
+R_Yj2 [pos="7.218,4.086"]
+R_Yj3 [pos="8.501,2.664"]
+R_Yj4 [pos="9.400,1.163"]
+R_Yk [pos="5.216,-9.516"]
+
+S [pos="1.071,5.918"]
+T [pos="3.817,-2.111"]
+W [pos="3.034,6.210"]
+
+U_B [latent,pos="1.507,-9.594"]
+U_L [latent,pos="5.229,4.963"]
+U_W [latent,pos="-0.752,4.983"]
+
+Yj1 [pos="-1.252,-1.176"]
+Yj1_star [pos="-1.830,4.320"]
+Yj2 [pos="5.665,-2.306"]
+Yj2_star [pos="5.999,-0.883"]
+Yj3 [pos="7.103,-3.027"]
+Yj3_star [pos="7.629,-1.156"]
+Yj4 [pos="8.347,-3.690"]
+Yj4_star [pos="8.925,-1.760"]
+Yk [pos="1.982,-1.293"]
+Yk_star [pos="3.599,0.422"]
+
+A -> U_B
+A -> Yj1
+A -> Yj2
+A -> Yj3
+A -> Yj4
+A -> Yk
+
+B -> A
+B -> B_star
+B -> C
+
+C -> A
+C -> S
+C -> U_B
+C -> W
+
+D -> C
+
+G -> A
+G -> C
+G -> G_star
+
+H -> A
+N -> A
+
+R_B -> B_star
+R_G -> G_star
+
+R_Yj1 -> Yj1_star
+R_Yj2 -> Yj2_star
+R_Yj3 -> Yj3_star
+R_Yj4 -> Yj4_star
+R_Yk -> Yk_star
+
+S -> U_L
+S -> U_W
+
+T -> U_B
+T -> U_L
+T -> U_W
+
+U_B -> Yj1
+U_B -> Yj2
+U_B -> Yj3
+U_B -> Yj4
+U_B -> Yk
+
+U_L -> R_Yj1
+U_L -> R_Yj2
+U_L -> R_Yj3
+U_L -> R_Yj4
+U_L -> R_Yk
+
+U_W -> R_Yj1
+U_W -> R_Yj2
+U_W -> R_Yj3
+U_W -> R_Yj4
+U_W -> R_Yk
+
+W -> U_L
+
+Yj1 -> R_Yk
+Yj1 -> Yj1_star
+
+Yj2 -> R_Yk
+Yj2 -> Yj2_star
+
+Yj3 -> R_Yk
+Yj3 -> Yj3_star
+
+Yj4 -> R_Yk
+Yj4 -> Yj4_star
+
+Yk -> R_Yk
+Yk -> Yk_star
+}

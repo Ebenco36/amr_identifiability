@@ -1,0 +1,81 @@
+dag {
+"A: Recorded prior antibiotic exposure" [pos="-1.458,-4.206"]
+"B: Gender" [pos="-4.146,-0.830"]
+"B_star: Recorded gender" [pos="-4.340,1.971"]
+"C: Baseline comorbidity" [pos="-1.466,-8.858"]
+"D: ADI profile" [pos="-3.417,-8.977"]
+"G: Age group" [pos="-3.663,-6.720"]
+"G_star: Recorded age group" [pos="-4.384,-4.721"]
+"H: Recorded baseline organism history" [pos="-2.503,0.566"]
+"N: Recorded baseline nursing-facility visit history" [pos="-0.816,-7.077"]
+"R_B: Gender missingness" [pos="-4.489,-3.038"]
+"R_G: Age missingness" [pos="-4.586,-7.809"]
+"R_Yj: Upstream resistance missingness" [pos="-0.825,-2.087"]
+"R_Yk: Downstream resistance missingness" [pos="3.859,-7.730"]
+"S: Recorded specimen category" [pos="2.189,5.515"]
+"T: Calendar period" [pos="5.300,-4.500"]
+"U_B: Unobserved shared resistance factors" [latent,pos="1.161,-8.977"]
+"U_C: Unmeasured clinical selection factors" [latent,pos="5.300,-8.500"]
+"U_L: Reporting configuration" [latent,pos="2.901,2.189"]
+"U_W: Unrecorded AST panel assignment" [latent,pos="0.827,1.833"]
+"W: Ward context" [pos="4.175,5.456"]
+"Yj: Upstream resistance" [pos="0.616,-3.295"]
+"Yj_star: Recorded upstream resistance" [pos="-0.878,2.447"]
+"Yk: Downstream resistance" [pos="2.110,-2.780"]
+"Yk_star: Recorded downstream resistance" [pos="2.971,0.249"]
+
+"A: Recorded prior antibiotic exposure" -> "U_B: Unobserved shared resistance factors"
+"A: Recorded prior antibiotic exposure" -> "Yj: Upstream resistance"
+"A: Recorded prior antibiotic exposure" -> "Yk: Downstream resistance"
+
+"B: Gender" -> "A: Recorded prior antibiotic exposure"
+"B: Gender" -> "B_star: Recorded gender"
+"B: Gender" -> "C: Baseline comorbidity"
+
+"C: Baseline comorbidity" -> "A: Recorded prior antibiotic exposure"
+"C: Baseline comorbidity" -> "S: Recorded specimen category"
+"C: Baseline comorbidity" -> "W: Ward context"
+"C: Baseline comorbidity" -> "U_B: Unobserved shared resistance factors"
+
+"D: ADI profile" -> "C: Baseline comorbidity"
+
+"G: Age group" -> "A: Recorded prior antibiotic exposure"
+"G: Age group" -> "C: Baseline comorbidity"
+"G: Age group" -> "G_star: Recorded age group"
+
+"H: Recorded baseline organism history" -> "A: Recorded prior antibiotic exposure"
+
+"N: Recorded baseline nursing-facility visit history" -> "A: Recorded prior antibiotic exposure"
+
+"R_B: Gender missingness" -> "B_star: Recorded gender"
+"R_G: Age missingness" -> "G_star: Recorded age group"
+
+"R_Yj: Upstream resistance missingness" -> "Yj_star: Recorded upstream resistance"
+"R_Yk: Downstream resistance missingness" -> "Yk_star: Recorded downstream resistance"
+
+"S: Recorded specimen category" -> "U_L: Reporting configuration"
+"S: Recorded specimen category" -> "U_W: Unrecorded AST panel assignment"
+
+"T: Calendar period" -> "U_B: Unobserved shared resistance factors"
+"T: Calendar period" -> "U_L: Reporting configuration"
+"T: Calendar period" -> "U_W: Unrecorded AST panel assignment"
+
+"U_B: Unobserved shared resistance factors" -> "Yj: Upstream resistance"
+"U_B: Unobserved shared resistance factors" -> "Yk: Downstream resistance"
+
+"U_C: Unmeasured clinical selection factors" -> "U_B: Unobserved shared resistance factors"
+"U_C: Unmeasured clinical selection factors" -> "U_W: Unrecorded AST panel assignment"
+
+"U_L: Reporting configuration" -> "R_Yj: Upstream resistance missingness"
+"U_L: Reporting configuration" -> "R_Yk: Downstream resistance missingness"
+
+"U_W: Unrecorded AST panel assignment" -> "R_Yj: Upstream resistance missingness"
+"U_W: Unrecorded AST panel assignment" -> "R_Yk: Downstream resistance missingness"
+
+"W: Ward context" -> "U_L: Reporting configuration"
+
+"Yj: Upstream resistance" -> "R_Yk: Downstream resistance missingness"
+"Yj: Upstream resistance" -> "Yj_star: Recorded upstream resistance"
+
+"Yk: Downstream resistance" -> "Yk_star: Recorded downstream resistance"
+}
