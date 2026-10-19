@@ -7,7 +7,7 @@ name = "amr-identifiability"
 version = "0.1.0"
 description = "Missingness graphs (m-DAGs) for recovering antimicrobial resistance prevalence from incomplete AST surveillance data"
 requires-python = ">=3.10"
-dependencies = ["networkx>=3.3"]
+dependencies = ["networkx>=3.3", "numpy>=1.24"]
 
 [project.optional-dependencies]
 dev = ["pytest>=7"]
